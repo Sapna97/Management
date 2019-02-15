@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br>
+<h4><bold>Hi,{{object.user.first_name}}</bold></h4>
+    <table class="table table-light table-bordered table-striped">
+        <tbody>
+        
+                <div>
+                    {% if object.picture %}
+                    <img src={{object.picture.url}} height="200"/>
+                    {% endif %}
+                </div>
+            <tr>
+                <th>First Name</th>
+                <td>{{object.user.first_name}}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{object.user.last_name}}</td>
+            </tr>
+            <tr>
+                <th>Email Id</th>
+                <td>{{object.user.email}}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{object.salary}}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{object.designation}}</td>
+            </tr>
+            <tr>
+                <th>Bio</th>
+                <td>{{object.bio}}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{object.phone}}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{object.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-right">
+        <a class="btn btn-warning" href="{%  url 'update_profile' %}">Edit Profile</a>
+    </div>
+{% endblock content %}

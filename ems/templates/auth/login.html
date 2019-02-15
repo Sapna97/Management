@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+    <head>
+        <title>Employee Management System</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+        <div class="loginbox">
+        <img src="{% static 'adminicon.png' %}"  class="avatar">
+        <h1>Login Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="username" id="username" placeholder="Enter Username" required>
+            <p>Password</p>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+            <input type="submit" name="" value="LOGIN">
+        </form>         
+        </div>
+        <p align="center" style="color:#C0392B"><font face="verdana">{{error}}</font></p>
+    </body>
+</html>
